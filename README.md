@@ -56,12 +56,40 @@ fi
 ```
 
 ### While loop
+Basic syntax
 ```shell
 #!/bin/sh
 while true; do   
   echo "output something"
 done 
 ```
+### While loop, break, continue
+breaking out of loop
+```shell
+#!/bin/sh
+var=$1
+re='^[0-9]+$'
+while true; do   
+  if [[ $var=~ $re]]; then
+    echo "input is not a number"
+    break
+  fi
+  echo "output something"
+done 
+```
+continue to next iteration
+```shell
+#!/bin/sh
+var=$1
+while [[$var -lt 10]]; do   
+  if [[$var=$(($i%2))]]; then    
+    continue
+  else
+    echo "var="$var
+  fi  
+done 
+```
+
 ## Files & Directories
 ### Copy contents of directory with subdirs to target directory
 ```shell
