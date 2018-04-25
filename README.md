@@ -1,6 +1,6 @@
 # Shell Primer
 # Table of Contents
-1. [Creating Shell Script](#creating-shell-Script)
+1. [Creating Shell Script](#creating-shell-script)
 2. [Conditions and Loops](#conditions-and-loops)
 3. [Files & Directories](#files--directories)
 4. [Executing python script](#executing-python-from-shell)
@@ -77,6 +77,12 @@ echo "current working directory is "$cwd
 if [ -d "$dir_name" ]; then
 		echo $dir_name" exists..."		
 fi
+```
+### Get directory name 
+```shell
+#!/bin/sh
+parent_dir=$( dirname $file_path)
+echo "The "$file_path" is in "$parent_dir"
 ```
 ### reading a file in while loop
 ```shell
