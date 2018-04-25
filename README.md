@@ -99,12 +99,22 @@ while read line; do
 done < input_file.txt
 ```
 ### Reading a csv file
+Consider reading a csv file (example_file.csv) from current directory. example_file.csv has two columns.
 The cat (short for concatenate) is used to read the file and pipe into while loop row by row.
 ```shell
 #!/bin/sh
 cat example_file.csv | while read col1 col1; do 
   echo "col1 value : "$col1", col2 value : "$col2
 done
+```
+### Writing to a csv file
+Consider writing to a csv file (example_file.csv) placed in current directory. example_file.csv has two columns.
+The cat (short for concatenate) is used to read the file and pipe into while loop row by row.
+```shell
+#!/bin/sh
+col1="val1"
+col2="val2"
+echo "$col1, $col2" >> example_file.csv
 ```
 ## Executing python from shell
 ### Python Script with arguments
