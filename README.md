@@ -1,5 +1,4 @@
 # Shell Primer
-# Table of Contents
 1. [Creating Shell Script](#creating-shell-script)
 2. [Conditions and Loops](#conditions-and-loops)
 3. [Files & Directories](#files--directories)
