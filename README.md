@@ -4,6 +4,7 @@
 2. [Conditions and Loops](#conditions-and-loops)
 3. [Files & Directories](#files--directories)
 4. [Executing python script](#executing-python-from-shell)
+
 ## Creating Shell Script
 ### Test script
 Save following in a file with sh extension e.g. shell_script.sh 
@@ -24,6 +25,10 @@ sh shell_script.sh
 arg=$1
 echo "hello from shell"
 echo "argument "$arg" recieved"
+```
+execute
+```shell
+sh shell_script.sh argument_value
 ```
 
 ### Passing arguments to script
