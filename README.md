@@ -35,6 +35,7 @@ sh shell_script.sh argument_value
 
 ## Conditions and Loops
 ### If then else
+Equality **=**check
 ```shell
 #!/bin/sh
 var="XYZ"
@@ -44,6 +45,17 @@ else
 		echo " false "		
 fi
 ```
+Non-equality **=~** check
+```shell
+#!/bin/sh
+var="XYZ"
+if [[ $var=~"XYZ ]]; then
+		echo " true "		
+else
+		echo " false "		
+fi
+```
+
 ### While loop
 ```shell
 #!/bin/sh
