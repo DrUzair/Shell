@@ -4,7 +4,7 @@
 2. [Conditions and Loops](#conditions-and-loops)
 3. [Files & Directories](#files--directories)
 4. [Executing python script](#executing-python-from-shell)
-
+5. [Regular Expressions](#regular-expressions)
 ## Creating Shell Script
 ### Test script
 Save following in a file with sh extension e.g. shell_script.sh 
@@ -65,6 +65,13 @@ cp -rf $source_dir $target_dir
 source_dir="/path/to/source/dir"
 rm -rf $source_dir
 ```
+removing named files and directories from cwd
+```shell
+#!/bin/sh
+source_dir="/path/to/source/dir"
+cd $source_dir
+rm -rf sub_dir1/ sub_dir2/ sub_dir3/sub_sub_dir1/*.csv
+```
 ### get current working directory
 ```shell
 #!/bin/sh
@@ -104,4 +111,15 @@ echo "output of python script is"$output
 ```shell
 #!/bin/sh
 output=$(curl -s "http:path_to_curl_service | python -c "exec(\"import json,sys; obj=json.load(sys.stdin); \\nif 'key' in obj.keys(): print(obj['key']); \\nelse: print(json.dumps(obj));\")")		
+```
+## Regular Expressions
+### Check if the variable value is a number
+```shell
+var=1
+re='^[0-9]+$'
+if ! [[ $var =~ $re ]] ; then
+   echo "the value is "$var    
+else
+   echo "the value "$var" is not a number"    
+fi
 ```
