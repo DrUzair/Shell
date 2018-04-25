@@ -82,14 +82,21 @@ continue to next iteration
 #!/bin/sh
 var=$1
 while [[$var -lt 10]]; do   
-  if [[$var=$(($i%2))]]; then    
+  if [[$var=$(($var%2))]]; then    
     continue
   else
     echo "var="$var
   fi  
 done 
 ```
-
+### For loop
+Print numbers divisible by 5 in the range of 1 to 100
+```shell
+#!/bin/sh
+for i in {1..100}; do
+    echo $(($i%5))
+done
+```
 ## Files & Directories
 ### Copy contents of directory with subdirs to target directory
 ```shell
