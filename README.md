@@ -1,8 +1,8 @@
 # Shell Primer
 # Table of Contents
-1. [Conditions and Loops](#Conditions and Loops)
-2. [Files & Directories](#Files & Directories)
-3. [Executing python script](#Executing python script )
+1. [Conditions and Loops](#Conditions-and-Loops)
+2. [Files & Directories](#Files-&-Directories)
+3. [Executing python script](#Executing-python-script )
 
 ## Conditions and Loops
 ### If then else
