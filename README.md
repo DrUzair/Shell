@@ -98,6 +98,14 @@ while read line; do
   echo $line
 done < input_file.txt
 ```
+### Reading a csv file
+The cat (short for concatenate) is used to read the file and pipe into while loop row by row.
+```shell
+#!/bin/sh
+cat example_file.csv | while read col1 col1; do 
+  echo "col1 value : "$col1", col2 value : "$col2
+done
+```
 ## Executing python from shell
 ### Python Script with arguments
 ```shell
