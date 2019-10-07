@@ -105,6 +105,10 @@ source_dir="/path/to/source/dir"
 source_dir="/path/to/target/dir"
 cp -rf $source_dir $target_dir
 ```
+#### Copy files with extension (e.g. jpg) within subdirs to a dest_dir
+```shell
+ find . -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) -exec cp '{}' ./dest_dir \;
+```
 ### Remove dir and its contents
 ```shell
 #!/bin/sh
@@ -187,3 +191,18 @@ else
    echo "the value "$var" is not a number"    
 fi
 ```
+## Scene Seg
+```shell
+files=$(du -a $vid_files_path | awk '{print $2}' | grep '\.mp4$')
+for file_path in $files; do
+        echo $file_path
+        dir_name=${file_path%.*}
+        echo "making new dir .." $dir_name
+        mkdir $dir_name
+
+        sd_cmd="scenedetect -i ${file_path} -o ${dir_name} detect-content list-scenes save-images split-video"
+        echo $sd_cmd
+        scenedetect -i ${file_path} -o ${dir_name} detect-content list-scenes save-images split-video        
+done
+```
+
